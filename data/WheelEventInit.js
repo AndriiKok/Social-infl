@@ -19,19 +19,7 @@ exports._convertInherit = (obj, ret, { context = "The provided value" } = {}) =>
       ret[key] = 0;
     }
   }
-
-  {
-    const key = "deltaX";
-    let value = obj === undefined || obj === null ? undefined : obj[key];
-    if (value !== undefined) {
-      value = conversions["double"](value, { context: context + " has member 'deltaX' that" });
-
-      ret[key] = value;
-    } else {
-      ret[key] = 0.0;
-    }
-  }
-
+ 
   {
     const key = "deltaY";
     let value = obj === undefined || obj === null ? undefined : obj[key];
@@ -66,3 +54,4 @@ exports.convert = function convert(obj, { context = "The provided value" } = {})
   exports._convertInherit(obj, ret, { context });
   return ret;
 };
+
